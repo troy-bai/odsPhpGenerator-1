@@ -248,7 +248,7 @@ class ods {
 	}
 	
 	public function addTmpPictures($file) {
-		if(in_array($file,$this->tmpPictures)) return  $this->tmpPictures[$file];
+		if(in_array($file, array_keys($this->tmpPictures))) return  $this->tmpPictures[$file];
 		$this->tmpPictures[$file] = "Pictures/".md5(time().rand()).strrchr($file,'.');
 		return $this->tmpPictures[$file];
 	}
